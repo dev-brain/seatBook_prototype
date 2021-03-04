@@ -148,15 +148,19 @@
     <script>
         var arr = []
         function stickyheaddsadaer(obj, val) {
-            arr.push(val)
+            if ($(obj).is(":checked")) {
+                // alert(val + "Yes checked"); //when checked
+                // $("#page-header-inner").addClass("sticky");
+                arr.push(val)
+            } else {
+                // alert("Not checked"); //when not checked
+                var item = arr.indexOf(val)
+                console.log(item)
+                arr.splice(item, 1);
+
+            }
             console.log(arr)
             document.getElementById("result").innerHTML = arr
-            // if ($(obj).is(":checked")) {
-            //     alert(val + "Yes checked"); //when checked
-            //     $("#page-header-inner").addClass("sticky");
-            // } else {
-            //     alert("Not checked"); //when not checked
-            // }
 
         }
     </script>
