@@ -9,14 +9,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
+    <script src="https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js"></script>
+
+
 
 </head>
 <style>
     .oval {
-        width: 100%;
-        height: 80px;
+        /* width: 150px;
+        height: 150px;
         background: #a84909;
+        border-radius: 50%; */
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
         border-radius: 50%;
+        font-size: 20px;
+        font-weight: 700;
+        color: burlywood;
+        text-align: center;
+        background: #000
     }
 
     #square {
@@ -92,7 +105,12 @@
 
     :checked+label::before {
         content: "✓";
-        background-color: green;
+        /* box-shadow: 0 0 5px #333; */
+        /* transform: scale(1); */
+        margin-left: 60%;
+        z-index: 99;
+        margin-top: 10%;
+        background-color: goldenrod;
         transform: scale(1);
     }
 
@@ -101,13 +119,119 @@
         /* box-shadow: 0 0 5px #333; */
         z-index: -1;
     }
+
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    @media only screen and (min-width: 993px) {
+        ul.stepper.horizontal::before {
+            box-shadow: 0px 0px 0px red !important;
+        }
+        ul.stepper.horizontal .step .step-content {
+            height: 0;
+        }
+    }
+    main {
+        flex: 1 0 auto;
+    }
 </style>
 
 <body style="padding:10%">
     <div class="row">
+        <div class="col s4">
+            <div class="row">
+                <div class="col s12 center">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'T1S2')" id="cb2" value="cb2" />
+                    <label for="cb2"><img src="seat.png" style="margin-bottom:-10%" /></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s3 ">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-1')" id="cb1" value="cb2" />
+                    <label for="cb1"><img src="seat.png" style="transform: rotate(-90deg);margin-top: 30%;" /></label>
+                </div>
+                <div class="col s2 center">
+                    <div class="oval">T1
+                    </div>
+                </div>
+                <div class="col s6" style="text-align: right;">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-3')" id="cb3" value="cb3" />
+                    <label for="cb3"><img src="seat.png"
+                            style="transform: rotate(90deg);margin-top: 17%; margin-right: -20px;" /></label>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-4')" id="cb4" value="cb4" />
+                    <label for="cb4"><img src="seat.png" style="margin-top:-7%;transform: rotate(180deg)" /></label>
+                </div>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="row">
+                <div class="col s12 center">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-2')" id="cb2" value="cb2" />
+                    <label for="cb2"><img src="seat.png" style="margin-bottom:-10%" /></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s3 ">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-1')" id="cb1" value="cb2" />
+                    <label for="cb1"><img src="seat.png" style="transform: rotate(-90deg);margin-top: 30%;" /></label>
+                </div>
+                <div class="col s2 center">
+                    <div class="oval">T2</div>
+                </div>
+                <div class="col s6" style="text-align: right;">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-3')" id="cb3" value="cb3" />
+                    <label for="cb3"><img src="seat.png"
+                            style="transform: rotate(90deg);margin-top: 17%; margin-right: -20px;" /></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-4')" id="cb4" value="cb4" />
+                    <label for="cb4"><img src="seat.png" style="margin-top:-7%;transform: rotate(180deg)" /></label>
+
+                </div>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="row">
+                <div class="col s12 center">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-2')" id="cb2" value="cb2" />
+                    <label for="cb2"><img src="seat.png" style="margin-bottom:-10%" /></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s3 ">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-1')" id="cb1" value="cb2" />
+                    <label for="cb1"><img src="seat.png" style="transform: rotate(-90deg);margin-top: 30%;" /></label>
+                </div>
+                <div class="col s2 center">
+                    <div class="oval">T3</div>
+                </div>
+                <div class="col s6" style="text-align: right;">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-3')" id="cb3" value="cb3" />
+                    <label for="cb3"><img src="seat.png"
+                            style="transform: rotate(90deg);margin-top: 17%; margin-right: -20px;" /></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center">
+                    <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-4')" id="cb4" value="cb4" />
+                    <label for="cb4"><img src="seat.png" style="margin-top:-7%;transform: rotate(180deg)" /></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="col s3"></div>
         <div class="col s2">
-            <!-- <div id="square"></div> -->
             <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-1')" id="cb1" value="cb1" />
             <label for="cb1" style="text-align: center;"><img src="seat.png" />
         </div>
@@ -120,14 +244,14 @@
     <div class="row">
         <div class="col s3">
             <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-3')" id="cb3" value="cb3" />
-            <label for="cb3" id="cb3Label"><img src="seat.png"  style="transform: rotate(-90deg);"/>
+            <label for="cb3" id="cb3Label"><img src="seat.png" style="transform: rotate(-90deg);margin-top:20px;margin-right: -10%;" />
         </div>
-        <div class="col s4">
+        <div class="col s2">
             <div class="oval"></div>
         </div>
         <div class="col s3">
             <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-4')" id="cb4" value="cb4" />
-            <label for="cb4"><img src="seat.png"  style="transform: rotate(90deg);"/>
+            <label for="cb4"><img src="seat.png" style="transform: rotate(90deg);margin-top:20px;margin-left: -20%;" />
         </div>
         <div class="col s2"></div>
     </div>
@@ -135,19 +259,83 @@
         <div class="col s3"></div>
         <div class="col s2">
             <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-5')" id="cb5" value="cb5" />
-            <label for="cb5" id="belowTable"><img src="seat.png" style="transform: rotate(-180deg);"/>
+            <label for="cb5" id="belowTable"><img src="seat.png" style="transform: rotate(-180deg);" />
         </div>
         <div class="col s2">
             <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-6')" id="cb6" value="cb6" />
-            <label for="cb6" id="belowTable"><img src="seat.png" style="transform: rotate(-180deg);"/>
+            <label for="cb6" id="belowTable"><img src="seat.png" style="transform: rotate(-180deg);" />
         </div>
         <div class="col s3"></div>
-    </div>
+    </div> -->
+    You Selected - 
     <div class="text-h4" id="result">
-        
     </div>
+    <!-- <img src="seat.png" alt=""> -->
+    <footer class="page-footer" style="background-color: goldenrod;">
+        <div>
+            <div class="row">
+                <div class="col s12">
+                    <!-- <h5 class="white-text">Footer Content</h5> -->
+                    <ul class="stepper horizontal" style="min-height: 170px;">
+                        <li class="step active">
+                            <div class="step-title waves-effect">Seat Selection</div>
+                            <div class="step-content">
+                                <!-- Your step content goes here (like inputs or so) -->
+                                <div class="step-actions">
+                                    <!-- Here goes your actions buttons -->
+                                    <button class="waves-effect waves-dark btn next-step">CONTINUE</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <div class="step-title waves-effect">Project/Functional Lead Approval
+                            </div>
+                            <div class="step-content">
+                                <!-- Your step content goes here (like inputs or so) -->
+                                <div class="step-actions">
+                                    <!-- Here goes your actions buttons -->
+                                    <button class="waves-effect waves-dark btn next-step">CONTINUE</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <div class="step-title waves-effect">Admin Spoc</div>
+                            <div class="step-content">
+                                <!-- Your step content goes here (like inputs or so) -->
+                                <div class="step-actions">
+                                    <!-- Here goes your actions buttons -->
+                                    <button class="waves-effect waves-dark btn next-step">CONTINUE</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="step">
+                            <div class="step-title waves-effect">IT team Spoc</div>
+                            <div class="step-content">
+                                <!-- Your step content goes here (like inputs or so) -->
+                                <div class="step-actions">
+                                    <!-- Here goes your actions buttons -->
+                                    <button class="waves-effect waves-dark btn next-step">CONTINUE</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                </div> -->
+            </div>
+        </div>
+        <!-- <div class="footer-copyright">
+          <div class="container">
+          © 2014 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div> -->
+    </footer>
+
     <script>
         var arr = []
+
         function stickyheaddsadaer(obj, val) {
             if ($(obj).is(":checked")) {
                 // alert(val + "Yes checked"); //when checked
@@ -164,6 +352,12 @@
             document.getElementById("result").innerHTML = arr
 
         }
+
+        var stepper = document.querySelector('.stepper');
+        var stepperInstace = new MStepper(stepper, {
+            // options
+            firstActive: 0 // this is the default
+        })
     </script>
 </body>
 
