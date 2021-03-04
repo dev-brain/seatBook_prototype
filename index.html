@@ -47,7 +47,7 @@
     }
 
     label {
-        border: 1px solid #fff;
+        /* border: 1px solid #fff; */
         /* padding: 10px; */
         display: block;
         position: relative;
@@ -106,12 +106,12 @@
 <body style="padding:10%">
     <div class="row">
         <div class="col s3"></div>
-        <div class="col s3">
+        <div class="col s2">
             <!-- <div id="square"></div> -->
             <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-1')" id="cb1" value="cb1" />
-            <label for="cb1"><img src="seat.png" />
+            <label for="cb1" style="text-align: center;"><img src="seat.png" />
         </div>
-        <div class="col s3">
+        <div class="col s2">
             <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-2')" id="cb2" value="cb2" />
             <label for="cb2"><img src="seat.png" />
         </div>
@@ -120,25 +120,26 @@
     <div class="row">
         <div class="col s3">
             <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-3')" id="cb3" value="cb3" />
-            <label for="cb3" id="cb3Label"><img src="seat.png" />
+            <label for="cb3" id="cb3Label"><img src="seat.png"  style="transform: rotate(-90deg);"/>
         </div>
-        <div class="col s6">
+        <div class="col s4">
             <div class="oval"></div>
         </div>
         <div class="col s3">
             <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-4')" id="cb4" value="cb4" />
-            <label for="cb4"><img src="seat.png" />
+            <label for="cb4"><img src="seat.png"  style="transform: rotate(90deg);"/>
         </div>
+        <div class="col s2"></div>
     </div>
     <div class="row">
         <div class="col s3"></div>
-        <div class="col s3">
+        <div class="col s2">
             <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-5')" id="cb5" value="cb5" />
-            <label for="cb5" id="belowTable"><img src="seat.png" />
+            <label for="cb5" id="belowTable"><img src="seat.png" style="transform: rotate(-180deg);"/>
         </div>
-        <div class="col s3">
+        <div class="col s2">
             <input type="checkbox" onchange="stickyheaddsadaer(this, 'Seat-6')" id="cb6" value="cb6" />
-            <label for="cb6" id="belowTable"><img src="seat.png" />
+            <label for="cb6" id="belowTable"><img src="seat.png" style="transform: rotate(-180deg);"/>
         </div>
         <div class="col s3"></div>
     </div>
