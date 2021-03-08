@@ -1,108 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css"
+    />
     <script src="https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js"></script>
-
-
-
-</head>
-<style>
+  </head>
+  <style>
     .oval {
-        /* width: 150px;
+      /* width: 150px;
         height: 150px;
         background: #a84909;
         border-radius: 50%; */
-        width: 150px;
-        height: 150px;
-        line-height: 150px;
-        border-radius: 50%;
-        font-size: 20px;
-        font-weight: 700;
-        color: burlywood;
-        text-align: center;
-        background: #000
+      width: 150px;
+      height: 150px;
+      line-height: 150px;
+      border-radius: 50%;
+      font-size: 20px;
+      font-weight: 700;
+      color: burlywood;
+      text-align: center;
+      background: #000;
     }
 
     #square {
-        width: 100px;
-        height: 100px;
-        background: red;
+      width: 100px;
+      height: 100px;
+      background: red;
     }
 
     ul {
-        list-style-type: none;
+      list-style-type: none;
     }
 
     li {
-        display: inline-block;
+      display: inline-block;
     }
 
     input[type="checkbox"][id^="cb"] {
-        display: none;
+      display: none;
     }
 
     #cb3Label {
-        text-align: end;
+      text-align: end;
     }
 
     #belowTable {
-        margin-top: -20%;
-        margin-left: 20%;
+      margin-top: -20%;
+      margin-left: 20%;
     }
 
     label {
-        /* border: 1px solid #fff; */
-        /* padding: 10px; */
-        display: block;
-        position: relative;
-        /* margin: 10px; */
-        cursor: pointer;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+      /* border: 1px solid #fff; */
+      /* padding: 10px; */
+      display: block;
+      position: relative;
+      /* margin: 10px; */
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
     label::before {
-        background-color: white;
-        color: white;
-        content: " ";
-        display: block;
-        border-radius: 50%;
-        border: 1px solid grey;
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        width: 25px;
-        height: 25px;
-        text-align: center;
-        line-height: 28px;
-        transition-duration: 0.4s;
-        transform: scale(0);
+      background-color: white;
+      color: white;
+      content: " ";
+      display: block;
+      border-radius: 50%;
+      border: 1px solid grey;
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 28px;
+      transition-duration: 0.4s;
+      transform: scale(0);
     }
 
     label img {
-        height: 100px;
-        width: 100px;
-        transition-duration: 0.2s;
-        transform-origin: 50% 50%;
+      height: 100px;
+      width: 100px;
+      transition-duration: 0.2s;
+      transform-origin: 50% 50%;
     }
 
-    :checked+label #imggO {
-        /* border-color: #ddd; */
-        fill: greenyellow;
-
+    :checked + label #imggO {
+      /* border-color: #ddd; */
+      fill: greenyellow;
     }
 
     /* :checked+label::before {
@@ -116,398 +117,669 @@
         transform: scale(1);
     } */
 
-    :checked+label img {
-        transform: scale(0.9);
-        /* box-shadow: 0 0 5px #333; */
-        z-index: -1;
+    :checked + label img {
+      transform: scale(0.9);
+      /* box-shadow: 0 0 5px #333; */
+      z-index: -1;
     }
 
     body {
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
+      display: flex;
+      /* min-height: 100vh; */
+      flex-direction: column;
+    }
+    .page-footer {
+      padding-top: 10px;
+      /* padding-bottom: 30px; */
+      /* height: 50px; */
     }
 
     @media only screen and (min-width: 993px) {
-        ul.stepper.horizontal::before {
-            box-shadow: 0px 0px 0px red !important;
-        }
+      ul.stepper.horizontal::before {
+        box-shadow: 0px 0px 0px red !important;
+      }
 
-        ul.stepper.horizontal .step .step-content {
-            height: 0;
-        }
+      ul.stepper.horizontal .step .step-content {
+        height: 0;
+      }
     }
 
     main {
-        flex: 1 0 auto;
+      flex: 1 0 auto;
     }
-</style>
+  </style>
 
-<body style="padding:10%">
+  <body style="padding: 10%">
     <main>
-        <div class="row" style="min-height: 100vh;">
-            <div class="col s4">
-                <div class="row">
-                    <div class="col s12 center">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T1-S2')" id="cb2" value="cb2"
-                            disabled />
-                        <label for="cb2">
-                            <!-- <img src="seat.png" style="margin-bottom:-10%" /> -->
-                            <?xml version="1.0" encoding="iso-8859-1"?>
-                            <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;" xml:space="preserve" width="80px"
-                                height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#FF0000" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+      <div class="row" style="min-height: 100vh">
+        <div class="col s4">
+          <div class="row">
+            <div class="col s12 center">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T1-S2')"
+                id="cb2"
+                value="cb2"
+                disabled
+              />
+              <label for="cb2">
+                <!-- <img src="seat.png" style="margin-bottom:-10%" /> -->
+                <?xml version="1.0" encoding="iso-8859-1"?>
+                <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#FF0000"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
 			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
 			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
 			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
 			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
 			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s3 ">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T1-S1')" id="cb1" value="cb2" />
-                        <label for="cb1">
-                            <!-- <img src="seat.png" style="transform: rotate(-90deg);margin-top: 30%;" /> -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;transform: rotate(-90deg);margin-top: 30%;"
-                                xml:space="preserve" width="80px" height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#DCDCDC" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
-			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
-			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
-			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
-			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
-			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-                    </div>
-                    <div class="col s2 center">
-                        <div class="oval">T1
-                        </div>
-                    </div>
-                    <div class="col s6" style="text-align: right;">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T1-S3')" id="cb3" value="cb3" />
-                        <label for="cb3">
-                            <!-- <img src="seat.png" style="transform: rotate(90deg);margin-top: 17%; margin-right: -20px;" /> -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;transform: rotate(90deg);margin-top: 17%; margin-right: -20px;"
-                                xml:space="preserve" width="80px" height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#DCDCDC" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
-			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
-			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
-			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
-			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
-			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 center">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T1-S4')" id="cb4" value="cb4" />
-                        <label for="cb4">
-                            <!-- <img src="seat.png" style="margin-top:-7%;transform: rotate(180deg)" /> -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;transform: rotate(180deg)" xml:space="preserve"
-                                width="80px" height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#DCDCDC" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
-			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
-			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
-			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
-			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
-			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-                    </div>
-                </div>
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
             </div>
-            <div class="col s4">
-                <div class="row">
-                    <div class="col s12 center">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T2-S2')" id="ts2" value="t22" />
-                        <label for="ts2">
-                            <!-- <img src="seat.png" style="margin-bottom:-10%" /> -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;" xml:space="preserve" width="80px"
-                                height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#DCDCDC" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+          </div>
+          <div class="row">
+            <div class="col s3">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T1-S1')"
+                id="cb1"
+                value="cb2"
+              />
+              <label for="cb1">
+                <!-- <img src="seat.png" style="transform: rotate(-90deg);margin-top: 30%;" /> -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="
+                    enable-background: new 0 0 512 512;
+                    transform: rotate(-90deg);
+                    margin-top: 30%;
+                  "
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#DCDCDC"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
 			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
 			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
 			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
 			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
 			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s3 ">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T2-S1')" id="ts1" value="t31" />
-                        <label for="ts1">
-                            <!-- <img src="seat.png" style="transform: rotate(-90deg);margin-top: 30%;" /> -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;transform: rotate(-90deg);margin-top: 30%;"
-                                xml:space="preserve" width="80px" height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#DCDCDC" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
-			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
-			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
-			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
-			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
-			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-                    </div>
-                    <div class="col s2 center">
-                        <div class="oval">T2</div>
-                    </div>
-                    <div class="col s6" style="text-align: right;">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T2-S3')" id="ts3" value="t23" />
-                        <label for="ts3">
-                            <!-- <img src="seat.png" style="transform: rotate(90deg);margin-top: 17%; margin-right: -20px;" /> -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;transform: rotate(90deg);margin-top: 17%; margin-right: -20px;"
-                                xml:space="preserve" width="80px" height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#DCDCDC" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
-			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
-			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
-			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
-			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
-			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 center">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T2-S4')" id="ts4" value="t24" />
-                        <label for="ts4">
-                            <!-- <img src="seat.png" style="margin-top:-7%;transform: rotate(180deg)" /> -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;transform: rotate(180deg)" xml:space="preserve"
-                                width="80px" height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#DCDCDC" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
-			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
-			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
-			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
-			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
-			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-
-                    </div>
-                </div>
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
             </div>
-            <div class="col s4">
-                <div class="row">
-                    <div class="col s12 center">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T3-S2')" id="t32" value="t32" />
-                        <label for="t32">
-                            <!-- <img src="seat.png" style="margin-bottom:-10%" /> -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;" xml:space="preserve" width="80px"
-                                height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#DCDCDC" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
-			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
-			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
-			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
-			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
-			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s3 ">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T3-S1')" id="t31" value="t31" />
-                        <label for="t31">
-                            <!-- <img src="seat.png" style="transform: rotate(-90deg);margin-top: 30%;" /> -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;transform: rotate(-90deg);margin-top: 30%;"
-                                xml:space="preserve" width="80px" height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#DCDCDC" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
-			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
-			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
-			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
-			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
-			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-                    </div>
-                    <div class="col s2 center">
-                        <div class="oval">T3</div>
-                    </div>
-                    <div class="col s6" style="text-align: right;">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T3-S3')" id="t33" value="t33"
-                            disabled />
-                        <label for="t33">
-                            <!-- <img src="seat.png" style="transform: rotate(90deg);margin-top: 17%; margin-right: -20px;" /> -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;transform: rotate(90deg);margin-top: 17%; margin-right: -20px;"
-                                xml:space="preserve" width="80px" height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#FF0000" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
-			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
-			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
-			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
-			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
-			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 center">
-                        <input type="checkbox" onchange="stickyheaddsadaer(this, 'T3-S4')" id="t34" value="t34" />
-                        <label for="t34">
-                            <!-- <img src="seat.png" style="margin-top:-7%;transform: rotate(180deg)" /> -->
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-                                style="enable-background:new 0 0 512 512;transform: rotate(180deg)" xml:space="preserve"
-                                width="80px" height="80px">
-                                <g>
-                                    <g>
-                                        <path id="imggO" fill="#DCDCDC" d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
-			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
-			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
-			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
-			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
-			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
-			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z" />
-                                    </g>
-                                </g>
-                            </svg>
-                        </label>
-                    </div>
-                </div>
+            <div class="col s2 center">
+              <div class="oval">T1</div>
             </div>
+            <div class="col s6" style="text-align: right">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T1-S3')"
+                id="cb3"
+                value="cb3"
+              />
+              <label for="cb3">
+                <!-- <img src="seat.png" style="transform: rotate(90deg);margin-top: 17%; margin-right: -20px;" /> -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="
+                    enable-background: new 0 0 512 512;
+                    transform: rotate(90deg);
+                    margin-top: 17%;
+                    margin-right: -20px;
+                  "
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#DCDCDC"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
+			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
+			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
+			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
+			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 center">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T1-S4')"
+                id="cb4"
+                value="cb4"
+              />
+              <label for="cb4">
+                <!-- <img src="seat.png" style="margin-top:-7%;transform: rotate(180deg)" /> -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="
+                    enable-background: new 0 0 512 512;
+                    transform: rotate(180deg);
+                  "
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#DCDCDC"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
+			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
+			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
+			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
+			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
         </div>
-        <div style="min-height: 100vh;">
-            <div class="row center">
-                <img src="clock.gif" alt="" width="40%">
-           <br> 
-           <h3>
-            Waiting For Approval
-           </h3>
+        <div class="col s4">
+          <div class="row">
+            <div class="col s12 center">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T2-S2')"
+                id="ts2"
+                value="t22"
+              />
+              <label for="ts2">
+                <!-- <img src="seat.png" style="margin-bottom:-10%" /> -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#DCDCDC"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
+			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
+			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
+			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
+			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
             </div>
+          </div>
+          <div class="row">
+            <div class="col s3">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T2-S1')"
+                id="ts1"
+                value="t31"
+              />
+              <label for="ts1">
+                <!-- <img src="seat.png" style="transform: rotate(-90deg);margin-top: 30%;" /> -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="
+                    enable-background: new 0 0 512 512;
+                    transform: rotate(-90deg);
+                    margin-top: 30%;
+                  "
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#DCDCDC"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
+			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
+			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
+			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
+			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+            <div class="col s2 center">
+              <div class="oval">T2</div>
+            </div>
+            <div class="col s6" style="text-align: right">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T2-S3')"
+                id="ts3"
+                value="t23"
+              />
+              <label for="ts3">
+                <!-- <img src="seat.png" style="transform: rotate(90deg);margin-top: 17%; margin-right: -20px;" /> -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="
+                    enable-background: new 0 0 512 512;
+                    transform: rotate(90deg);
+                    margin-top: 17%;
+                    margin-right: -20px;
+                  "
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#DCDCDC"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
+			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
+			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
+			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
+			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 center">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T2-S4')"
+                id="ts4"
+                value="t24"
+              />
+              <label for="ts4">
+                <!-- <img src="seat.png" style="margin-top:-7%;transform: rotate(180deg)" /> -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="
+                    enable-background: new 0 0 512 512;
+                    transform: rotate(180deg);
+                  "
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#DCDCDC"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
+			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
+			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
+			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
+			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
         </div>
-        You Selected -
-        <div class="text-h4" id="result">
+        <div class="col s4">
+          <div class="row">
+            <div class="col s12 center">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T3-S2')"
+                id="t32"
+                value="t32"
+              />
+              <label for="t32">
+                <!-- <img src="seat.png" style="margin-bottom:-10%" /> -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#DCDCDC"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
+			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
+			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
+			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
+			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s3">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T3-S1')"
+                id="t31"
+                value="t31"
+              />
+              <label for="t31">
+                <!-- <img src="seat.png" style="transform: rotate(-90deg);margin-top: 30%;" /> -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="
+                    enable-background: new 0 0 512 512;
+                    transform: rotate(-90deg);
+                    margin-top: 30%;
+                  "
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#DCDCDC"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
+			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
+			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
+			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
+			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+            <div class="col s2 center">
+              <div class="oval">T3</div>
+            </div>
+            <div class="col s6" style="text-align: right">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T3-S3')"
+                id="t33"
+                value="t33"
+                disabled
+              />
+              <label for="t33">
+                <!-- <img src="seat.png" style="transform: rotate(90deg);margin-top: 17%; margin-right: -20px;" /> -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="
+                    enable-background: new 0 0 512 512;
+                    transform: rotate(90deg);
+                    margin-top: 17%;
+                    margin-right: -20px;
+                  "
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#FF0000"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
+			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
+			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
+			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
+			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 center">
+              <input
+                type="checkbox"
+                onchange="stickyheaddsadaer(this, 'T3-S4')"
+                id="t34"
+                value="t34"
+              />
+              <label for="t34">
+                <!-- <img src="seat.png" style="margin-top:-7%;transform: rotate(180deg)" /> -->
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="
+                    enable-background: new 0 0 512 512;
+                    transform: rotate(180deg);
+                  "
+                  xml:space="preserve"
+                  width="80px"
+                  height="80px"
+                >
+                  <g>
+                    <g>
+                      <path
+                        id="imggO"
+                        fill="#DCDCDC"
+                        d="M409.869,452.257L391.175,218.59l28.675-96.541c8.622-29.027,3.182-59.593-14.927-83.862
+			C386.815,13.919,359.063,0,328.783,0H183.217c-30.28,0-58.032,13.919-76.141,38.188C88.968,62.457,83.527,93.023,92.149,122.05
+			l28.675,96.541l-18.693,233.666C87.392,454.156,76,466.743,76,482c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30h240
+			c0,16.569,13.431,30,30,30c16.569,0,30-13.431,30-30C436,466.743,424.608,454.156,409.869,452.257z M147.193,202l-26.285-88.492
+			c-5.9-19.861-2.177-40.774,10.213-57.38c12.229-16.389,30.89-25.862,51.294-26.105L199.442,202H147.193z M282.412,202h-52.824
+			l-17.03-172h86.884L282.412,202z M364.808,202h-52.249l17.027-171.977c20.404,0.244,39.065,9.716,51.293,26.105
+			c12.39,16.605,16.112,37.519,10.213,57.379L364.808,202z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </label>
+            </div>
+          </div>
         </div>
+      </div>
+      <div style="min-height: 60vh">
+        <div class="row center">
+          <img src="clock.gif" alt="" width="40%" />
+          <br />
+          <h3>Waiting For Approval</h3>
+        </div>
+      </div>
+      You Selected -
+      <div class="text-h4" id="result"></div>
     </main>
     <!-- <img src="seat.png" alt=""> -->
-    <footer class="page-footer" style="background-color: white;bottom: 0;position: fixed;">
-        <div>
-            <div class="row">
-                <div class="">
-                    <!-- <h5 class="white-text">Footer Content</h5> -->
-                    <ul class="stepper horizontal" style="min-height: 80px; width: 150vh;">
-                        <li class="step active">
-                            <div class="step-title waves-effect black-text">Seat Selection</div>
-                            <div class="step-content">
-                                <!-- Your step content goes here (like inputs or so) -->
-
-                            </div>
-                        </li>
-                        <li class="step">
-                            <div class="step-title waves-effect black-text">Project/Functional Lead Approval
-                            </div>
-                            <div class="step-content">
-                                <!-- Your step content goes here (like inputs or so) -->
-
-                            </div>
-                        </li>
-                        <li class="step">
-                            <div class="step-title waves-effect black-text">Admin Spoc</div>
-                            <div class="step-content">
-                                <!-- Your step content goes here (like inputs or so) -->
-
-                            </div>
-                        </li>
-                        <li class="step">
-                            <div class="step-title waves-effect black-text">IT team Spoc</div>
-                            <div class="step-content">
-                                <!-- Your step content goes here (like inputs or so) -->
-
-                            </div>
-                        </li>
-                    </ul>
+    <footer
+      class="page-footer"
+      style="background-color: white; bottom: 0; position: fixed"
+    >
+      <div>
+        <div class="row">
+          <div class="">
+            <!-- <h5 class="white-text">Footer Content</h5> -->
+            <ul
+              class="stepper horizontal"
+              style="min-height: 80px; width: 150vh"
+            >
+              <li class="step active">
+                <div class="step-title waves-effect black-text">
+                  Seat Selection
                 </div>
-                <!-- <div class="col l4 offset-l2 s12">
+                <div class="step-content">
+                  <!-- Your step content goes here (like inputs or so) -->
+                </div>
+              </li>
+              <li class="step">
+                <div class="step-title waves-effect black-text">
+                  Project/Functional Lead Approval
+                </div>
+                <div class="step-content">
+                  <!-- Your step content goes here (like inputs or so) -->
+                </div>
+              </li>
+              <li class="step">
+                <div class="step-title waves-effect black-text">Admin Spoc</div>
+                <div class="step-content">
+                  <!-- Your step content goes here (like inputs or so) -->
+                </div>
+              </li>
+              <li class="step">
+                <div class="step-title waves-effect black-text">
+                  IT team Spoc
+                </div>
+                <div class="step-content">
+                  <!-- Your step content goes here (like inputs or so) -->
+                </div>
+                <br />
+                <div class="step-actions">
+                  <br />
+                  <br />
+                  <br />
+                  <button
+                    class="waves-effect waves-dark btn next-step"
+                    onclick="colorChange()"
+                  >
+                    CONTINUE
+                  </button>
+                  <!-- <button class="waves-effect waves-dark btn-flat previous-step">BACK</button> -->
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                 </div> -->
-            </div>
         </div>
-        <!-- <div class="footer-copyright">
+      </div>
+      <!-- <div class="footer-copyright">
           <div class="container">
           © 2014 Copyright Text
           <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
@@ -516,31 +788,42 @@
     </footer>
 
     <script>
-        var arr = []
+      var arr = [];
 
-        function stickyheaddsadaer(obj, val) {
-            if ($(obj).is(":checked")) {
-                // alert(val + "Yes checked"); //when checked
-                // $("#page-header-inner").addClass("sticky");
-                arr.push(val)
-            } else {
-                // alert("Not checked"); //when not checked
-                var item = arr.indexOf(val)
-                console.log(item)
-                arr.splice(item, 1);
-
-            }
-            console.log(arr)
-            document.getElementById("result").innerHTML = arr
-
+      function stickyheaddsadaer(obj, val) {
+        if ($(obj).is(":checked")) {
+          // alert(val + "Yes checked"); //when checked
+          // $("#page-header-inner").addClass("sticky");
+          arr.push(val);
+        } else {
+          // alert("Not checked"); //when not checked
+          var item = arr.indexOf(val);
+          console.log(item);
+          arr.splice(item, 1);
         }
+        console.log(arr);
+        document.getElementById("result").innerHTML = arr;
+        // document.getElementById(arr).style.backgroundColor = "#ffff00";
+      }
 
-        var stepper = document.querySelector('.stepper');
-        var stepperInstace = new MStepper(stepper, {
-            // options
-            firstActive: 0 // this is the default
-        })
+      function colorChange() {
+        // document.getElementById("mydiv").style.visibility = "visible";
+        for (var i = 1; i <= 3; i++) {
+          for (var j = 1; j <= 4; j++) {
+              if(arr.includes('T'+ i + '-S' + j )){
+                  console.log(arr)
+                  
+              }
+          }
+        }
+        // document.getElementById(arr).style.color = "#ffff00";
+      }
+
+      var stepper = document.querySelector(".stepper");
+      var stepperInstace = new MStepper(stepper, {
+        // options
+        firstActive: 0, // this is the default
+      });
     </script>
-</body>
-
+  </body>
 </html>
