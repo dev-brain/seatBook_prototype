@@ -8,35 +8,85 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Document</title>
 </head>
+<style>
+    main {
+    flex: 1 0 auto;
+  }
+     
+</style>
 <body>
-    <div class="row">
-        <div class="col s4">
-
+    <main>
+        <div class="row">
+            <div class="col s4">
+    
+            </div>
+            <div class="col s4">
+    
+                <ul class="collapsible">
+                    <li>
+                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>John</div>
+                    <div class="collapsible-body"><span id="seat">Lorem ipsum dolor sit amet.</span></div>
+                    </li>
+                    <li>
+                    <div class="collapsible-header"><i class="material-icons">place</i>Maria</div>
+                    <div class="collapsible-body"><span>T3-S2, T2-S4 , T2-S3</span></div>
+                    </li>
+                    <li>
+                    <div class="collapsible-header"><i class="material-icons">whatshot</i>Dev</div>
+                    <div class="collapsible-body"><span>T3-S4, T1-S2</span></div>
+                    </li>
+                </ul>
+            
+            </div>
+            <div class="col s4">
+                <!-- <a class="waves-effect waves-light btn" style="background-color: greenyellow;">Approved</a>
+                <a class="waves-effect waves-light btn" style="background-color: red;">Declined</a> -->
+    
+            </div>
         </div>
-        <div class="col s4">
-
-            <ul class="collapsible">
-                <li>
-                <div class="collapsible-header"><i class="material-icons">filter_drama</i>John</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-                <li>
-                <div class="collapsible-header"><i class="material-icons">place</i>Maria</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-                <li>
-                <div class="collapsible-header"><i class="material-icons">whatshot</i>Dev</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-                </li>
-            </ul>
-        
+        <div class="row">
+            <div class="col s4"></div>
+            <div class="col s4" style="margin-left: 25px;">
+                <a class="waves-effect waves-light btn" style="background-color: rgb(118, 189, 13);">Approved</a>
+                <a class="waves-effect waves-light btn" style="background-color: rgb(228, 19, 19);">Declined</a>
+            </div>
+            <div class="col s4"></div>
         </div>
-        <div class="col s4"></div>
-    </div>
+    </main>
+
+    <footer class="page-footer" style="margin-top: 40vh; background-color: grey;">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Approval Details</h5>
+              <p class="grey-text text-lighten-4">Send for approval</p>
+              
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <a class="waves-effect waves-light btn" style="background-color: rgb(118, 189, 13);">Approve</a>
+              <!-- <h5 class="white-text">Links</h5> -->
+              <!-- <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <!-- <div class="container">
+          © 2014 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div> -->
+        </div>
+      </footer>
+
     <script>
+        document.getElementById('seat').innerHTML = localStorage.getItem('Array')
         console.log( localStorage.getItem('Array') )
         // M.autoinit()
 
